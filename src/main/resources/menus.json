@@ -1,0 +1,155 @@
+[
+  {
+    "id": "menu-0",
+    "disName": "Data",
+    "disNumber": 1,
+    "type": "PARENT",
+    "category": "INITIAL",
+    "parentId": "",
+    "children": [
+      {
+        "id": "menu-0.0",
+        "disName": "Add part",
+        "disNumber": 1,
+        "type": "CHILD",
+        "category": "DATA",
+        "parentId": "menu-0",
+        "children": [],
+        "method": "addPart"
+      },
+      {
+        "id": "menu-0.1",
+        "disName": "Add manufacturer",
+        "disNumber": 2,
+        "type": "CHILD",
+        "category": "DATA",
+        "parentId": "menu-0",
+        "children": [],
+        "method": "addManufacturer"
+      },
+      {
+        "id": "menu-0.2",
+        "disName": "Remove manufacturer",
+        "disNumber": 3,
+        "type": "CHILD",
+        "category": "DATA",
+        "parentId": "menu-0",
+        "children": [],
+        "method": "removeManufacturer"
+      },
+      {
+        "id": "menu-0.3",
+        "disName": "Back",
+        "disNumber": 4,
+        "type": "BACK",
+        "category": "DATA",
+        "parentId": "menu-0",
+        "children": [],
+        "method": "goBack"
+      }
+    ],
+    "method": ""
+  },
+  {
+    "id": "menu-1",
+    "disName": "Manufacturers",
+    "disNumber": 2,
+    "type": "PARENT",
+    "category": "INITIAL",
+    "parentId": "",
+    "children": [
+      {
+        "id": "menu-1.0",
+        "disName": "Add quantity",
+        "disNumber": 1,
+        "type": "CHILD",
+        "category": "MANUFACTURERS",
+        "parentId": "menu-1",
+        "children": [],
+        "method": "addQuantity"
+      },
+      {
+        "id": "menu-1.1",
+        "disName": "List quantity",
+        "disNumber": 2,
+        "type": "CHILD",
+        "category": "MANUFACTURERS",
+        "parentId": "menu-1",
+        "children": [],
+        "method": "listQuantity"
+      },
+      {
+        "id": "menu-1.2",
+        "disName": "Back",
+        "disNumber": 3,
+        "type": "BACK",
+        "category": "MANUFACTURERS",
+        "parentId": "menu-1",
+        "children": [],
+        "method": "goBack"
+      }
+    ],
+    "method": ""
+  },
+  {
+    "id": "menu-2",
+    "disName": "Company",
+    "disNumber": 3,
+    "type": "PARENT",
+    "category": "INITIAL",
+    "parentId": "",
+    "children": [
+      {
+        "id": "menu-2.0",
+        "disName": "Add money",
+        "disNumber": 1,
+        "type": "CHILD",
+        "category": "COMPANY",
+        "parentId": "menu-2",
+        "children": [],
+        "method": "addMoney"
+      },
+      {
+        "id": "menu-2.1",
+        "disName": "Buy Parts",
+        "disNumber": 2,
+        "type": "CHILD",
+        "category": "COMPANY",
+        "parentId": "menu-2",
+        "children": [],
+        "method": "buyParts"
+      },
+      {
+        "id": "menu-2.2",
+        "disName": "List Parts",
+        "disNumber": 3,
+        "type": "CHILD",
+        "category": "COMPANY",
+        "parentId": "menu-2",
+        "children": [],
+        "method": "listParts"
+      },
+      {
+        "id": "menu-2.3",
+        "disName": "Back",
+        "disNumber": 4,
+        "type": "BACK",
+        "category": "COMPANY",
+        "parentId": "menu-2",
+        "children": [],
+        "method": "goBack"
+      }
+    ],
+    "method": ""
+  },
+  {
+    "id": "menu-3",
+    "disName": "Exit",
+    "disNumber": 4,
+    "type": "CHILD",
+    "category": "INITIAL",
+    "parentId": "",
+    "children": [],
+    "method": "exit"
+  }
+]
