@@ -1,6 +1,6 @@
 package database.repository;
 
-import database.DatabaseSessionFactory;
+import database.DatabaseFactory;
 import entity.Company;
 import java.util.List;
 import org.hibernate.SessionFactory;
@@ -8,7 +8,7 @@ import org.hibernate.query.Query;
 
 public class CompanyRepository {
 
-  SessionFactory companySessionFactory = DatabaseSessionFactory.getDatabaseSession(Company.class);
+  SessionFactory companySessionFactory = DatabaseFactory.getDatabaseInstance(Company.class);
 
   public Company getCompany() {
     var session = companySessionFactory.openSession();

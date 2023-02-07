@@ -1,10 +1,12 @@
 package utils;
 
-import handlers.menuHandlers.*;
+import handlers.menuHandlers.CompanyMenuHandler;
+import handlers.menuHandlers.DataMenuHandler;
+import handlers.menuHandlers.InitialMenuHandler;
+import handlers.menuHandlers.ManufacturerMenuHandler;
 import interfaces.IMenuHandler;
-import models.menu.Menu;
-
 import java.util.HashMap;
+import models.menu.Menu;
 
 public final class MenuHandlerFactory {
 

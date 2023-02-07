@@ -1,6 +1,6 @@
 package database.repository;
 
-import database.DatabaseSessionFactory;
+import database.DatabaseFactory;
 import entity.Company;
 import entity.CompanyPart;
 import entity.PartManufacturer;
@@ -11,7 +11,7 @@ import org.hibernate.query.Query;
 
 public class CompanyPartRepository {
 
-  SessionFactory companyPartSessionFactory = DatabaseSessionFactory.getDatabaseSession(
+  SessionFactory companyPartSessionFactory = DatabaseFactory.getDatabaseInstance(
       CompanyPart.class);
 
   public String buyPart(List<PartManufacturer> partManufacturerList, int quantity,
@@ -104,7 +104,7 @@ public class CompanyPartRepository {
   }
 
   private void updatePartManufacturer(PartManufacturer partManufacturer) {
-    SessionFactory partManufacturerFactory = DatabaseSessionFactory.getDatabaseSession(
+    SessionFactory partManufacturerFactory = DatabaseFactory.getDatabaseInstance(
         PartManufacturer.class);
     var session = partManufacturerFactory.openSession();
     session.beginTransaction();
@@ -115,7 +115,7 @@ public class CompanyPartRepository {
   }
 
   private void updateCompany(Company company) {
-    SessionFactory companySessionFactory = DatabaseSessionFactory.getDatabaseSession(Company.class);
+    SessionFactory companySessionFactory = DatabaseFactory.getDatabaseInstance(Company.class);
     var session = companySessionFactory.openSession();
     session.beginTransaction();
     session.update(company);

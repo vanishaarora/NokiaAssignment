@@ -1,6 +1,6 @@
 package database.repository;
 
-import database.DatabaseSessionFactory;
+import database.DatabaseFactory;
 import entity.Part;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +10,7 @@ import org.hibernate.query.Query;
 
 public class PartRepository {
 
-  public SessionFactory partsSessionFactory = DatabaseSessionFactory.getDatabaseSession(Part.class);
+  public SessionFactory partsSessionFactory = DatabaseFactory.getDatabaseInstance(Part.class);
 
   public Optional<Part> getPartByName(String partName) throws Exception {
     try {

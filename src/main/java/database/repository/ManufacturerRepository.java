@@ -1,6 +1,6 @@
 package database.repository;
 
-import database.DatabaseSessionFactory;
+import database.DatabaseFactory;
 import entity.Manufacturer;
 import java.util.Optional;
 import org.hibernate.HibernateException;
@@ -10,7 +10,7 @@ import org.hibernate.query.Query;
 
 public class ManufacturerRepository {
 
-  SessionFactory manufacturerSessionFactory = DatabaseSessionFactory.getDatabaseSession(
+  SessionFactory manufacturerSessionFactory = DatabaseFactory.getDatabaseInstance(
       Manufacturer.class);
 
   public Optional<Manufacturer> getManufacturerByName(String manufacturerName)

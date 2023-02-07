@@ -3,9 +3,9 @@ package database;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class DatabaseSessionFactory {
+public class DatabaseFactory {
 
-  public static SessionFactory getDatabaseSession(Class classDetails) {
+  public static SessionFactory getDatabaseInstance(Class classDetails) {
     try {
       // creates a new database connection
       return new Configuration().configure().addAnnotatedClass(classDetails)

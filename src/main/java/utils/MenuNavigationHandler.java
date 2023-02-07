@@ -3,22 +3,25 @@ package utils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import handlers.routeHandlers.RouteHandler;
-import models.menu.Menu;
-import models.menu.MenuCategory;
-
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Type;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Scanner;
+import models.menu.Menu;
+import models.menu.MenuCategory;
 
 public class MenuNavigationHandler {
 
+  public static MenuNavigationHandler instance = new MenuNavigationHandler();
+  private List<Menu> completeMenuList = new ArrayList<>();
+
   private MenuNavigationHandler() {
   }
-
-  public static MenuNavigationHandler instance = new MenuNavigationHandler();
-
-  private List<Menu> completeMenuList = new ArrayList<>();
 
   public void loadAndShowMenus(String path) throws Exception {
     try (Reader reader = new InputStreamReader(
@@ -26,6 +29,7 @@ public class MenuNavigationHandler {
       Type listType = new TypeToken<List<Menu>>() {
       }.getType();
       completeMenuList = new Gson().fromJson(reader, listType);
+
       showMenus(MenuCategory.INITIAL);
     } catch (Exception e) {
       throw new Exception("Unable to load menus");

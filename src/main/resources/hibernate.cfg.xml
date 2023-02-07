@@ -1,7 +1,7 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">org.h2.Driver</property>
-    <property name="hibernate.connection.url">jdbc:h2:~/test7
+    <property name="hibernate.connection.url">jdbc:h2:~/nokiaDB
     </property>
     <property name="hibernate.connection.username">sa</property>
     <property name="hibernate.connection.password"></property>

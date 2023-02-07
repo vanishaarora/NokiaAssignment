@@ -65,12 +65,12 @@ public class CompanyPart {
     this.company = company;
   }
 
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-  }
-
   public int getQuantity() {
     return this.quantity;
+  }
+
+  public void setQuantity(int quantity) {
+    this.quantity = quantity;
   }
 
   @Override

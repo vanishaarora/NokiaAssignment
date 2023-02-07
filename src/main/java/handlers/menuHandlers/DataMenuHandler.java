@@ -2,14 +2,21 @@ package handlers.menuHandlers;
 
 import interfaces.IDataMenuHandler;
 import interfaces.IMenuHandler;
-import models.menu.Menu;
-
 import java.lang.reflect.InvocationTargetException;
-import usecases.DataUseCase;
+import models.menu.Menu;
+import models.menu.ServiceType;
+import services.ManufacturerService;
+import services.PartService;
+import utils.InputValidator;
+import utils.ServiceFactory;
 
 public class DataMenuHandler implements IMenuHandler, IDataMenuHandler {
 
-  DataUseCase DataUseCase = new DataUseCase();
+  InputValidator operator = InputValidator.getInstance();
+  PartService partService = (PartService) ServiceFactory.getInstance().getService(ServiceType.PART);
+  ManufacturerService manufacturerService = (ManufacturerService) ServiceFactory.getInstance()
+      .getService(ServiceType.MANUFACTURER);
+
 
   @Override
   public void handleMenu(Menu menu) {
@@ -27,19 +34,45 @@ public class DataMenuHandler implements IMenuHandler, IDataMenuHandler {
 
   @Override
   public void addPart(Menu menu) {
-    DataUseCase.startAddPartFlow();
+    String partName = getPart();
+
+    if (partName == "") {
+      partName = getPart();
+    }
+
+    partService.addNewPart(partName);
     goBack(menu);
   }
 
   @Override
   public void addManufacturer(Menu menu) {
-    DataUseCase.startAddManufacturerFlow();
+    String manufacturerName = getManufacturer();
+
+    if (manufacturerName == "") {
+      manufacturerName = getManufacturer();
+    }
+
+    manufacturerService.addNewManufacturer(manufacturerName);
     goBack(menu);
   }
 
   @Override
   public void removeManufacturer(Menu menu) {
-    DataUseCase.startRemoveManufacturerFlow();
+    String manufacturerName = getManufacturer();
+
+    if (manufacturerName == "") {
+      manufacturerName = getManufacturer();
+    }
+
+    manufacturerService.removeManufacturer(manufacturerName);
     goBack(menu);
+  }
+
+  private String getPart() {
+    return operator.getStringInput("Enter the part name:");
+  }
+
+  private String getManufacturer() {
+    return operator.getStringInput("Enter the manufacturer name:");
   }
 }

@@ -1,11 +1,11 @@
-
 import java.util.logging.Level;
 import utils.MenuNavigationHandler;
 
 public class Main {
 
 
-  public static void main(String[] args) { startApp();
+  public static void main(String[] args) {
+    startApp();
   }
 
   private static void startApp() {
