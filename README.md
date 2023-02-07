@@ -18,11 +18,11 @@
 2. To run the test cases for CompanyServiceTest class. First you need to change the database name from "hibernate.cfg.xml" located under src/main/resources. Change the value "nokia" on line 4 to "test7".
 
 
-###Build Status
+### Build Status
 SUCCESS
 
 
-###Technologies used
+### Technologies used
 1. Language Used - Java
 2. Database used - H2
 3. Dependency Manager - Maven
@@ -30,7 +30,7 @@ SUCCESS
 5. Testing - Junit
 
 
-###Database Schema
+### Database Schema
 It consists of five entities:
 1. Company
 2. CompanyPart
