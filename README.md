@@ -7,13 +7,13 @@
 3. It provides menu on the console to navigate to different areas to perform certain operations.
 4. It covers Junit test cases for two of the services.
 
-###Installation
+### Installation
 1. Setup jdk 17 in your system
 2. Clone the repository
 3. Rebuild project and sync maven dependencies
 4. Run Main.java file
 
-###To run the test cases- 
+### To run the test cases- 
 1. To run the test cases for ManufacturerServiceTest class. First you need to change the database name from "hibernate.cfg.xml" located under src/main/resources. Change the value "nokia" on line 4 to "test6".
 2. To run the test cases for CompanyServiceTest class. First you need to change the database name from "hibernate.cfg.xml" located under src/main/resources. Change the value "nokia" on line 4 to "test7".
 
